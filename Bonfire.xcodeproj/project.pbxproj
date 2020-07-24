@@ -14,6 +14,8 @@
 		AE6A276424CB634A0088CEC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE6A276224CB634A0088CEC6 /* Main.storyboard */; };
 		AE6A276624CB634B0088CEC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE6A276524CB634B0088CEC6 /* Assets.xcassets */; };
 		AE6A276924CB634B0088CEC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE6A276724CB634B0088CEC6 /* LaunchScreen.storyboard */; };
+		AE6A277224CB688F0088CEC6 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6A277124CB688F0088CEC6 /* LogInViewController.swift */; };
+		AE6A278A24CB98A00088CEC6 /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6A278924CB98A00088CEC6 /* SpotifyiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		AE6A276524CB634B0088CEC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE6A276824CB634B0088CEC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE6A276A24CB634B0088CEC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE6A277124CB688F0088CEC6 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		AE6A277824CB77800088CEC6 /* Bonfire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bonfire.h; sourceTree = "<group>"; };
+		AE6A278924CB98A00088CEC6 /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE6A278A24CB98A00088CEC6 /* SpotifyiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,14 +66,25 @@
 			children = (
 				AE6A275A24CB634A0088CEC6 /* AppDelegate.swift */,
 				AE6A275C24CB634A0088CEC6 /* SceneDelegate.swift */,
-				AE6A275E24CB634A0088CEC6 /* FirstViewController.swift */,
-				AE6A276024CB634A0088CEC6 /* SecondViewController.swift */,
+				AE6A277824CB77800088CEC6 /* Bonfire.h */,
+				AE6A277024CB68370088CEC6 /* ViewControllers */,
 				AE6A276224CB634A0088CEC6 /* Main.storyboard */,
 				AE6A276524CB634B0088CEC6 /* Assets.xcassets */,
 				AE6A276724CB634B0088CEC6 /* LaunchScreen.storyboard */,
 				AE6A276A24CB634B0088CEC6 /* Info.plist */,
+				AE6A278924CB98A00088CEC6 /* SpotifyiOS.framework */,
 			);
 			path = Bonfire;
+			sourceTree = "<group>";
+		};
+		AE6A277024CB68370088CEC6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AE6A277124CB688F0088CEC6 /* LogInViewController.swift */,
+				AE6A275E24CB634A0088CEC6 /* FirstViewController.swift */,
+				AE6A276024CB634A0088CEC6 /* SecondViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +161,7 @@
 				AE6A276124CB634A0088CEC6 /* SecondViewController.swift in Sources */,
 				AE6A275F24CB634A0088CEC6 /* FirstViewController.swift in Sources */,
 				AE6A275B24CB634A0088CEC6 /* AppDelegate.swift in Sources */,
+				AE6A277224CB688F0088CEC6 /* LogInViewController.swift in Sources */,
 				AE6A275D24CB634A0088CEC6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,9 +242,12 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/danielyang/Desktop/Bonfire/Bonfire/Bonfire.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 			};
 			name = Debug;
 		};
@@ -277,9 +298,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/danielyang/Desktop/Bonfire/Bonfire/Bonfire.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -290,13 +314,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33ZTB6S9UB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Bonfire",
+				);
 				INFOPLIST_FILE = Bonfire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yang.Bonfire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/danielyang/Desktop/Bonfire/Bonfire/Bonfire.h;
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -308,13 +339,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33ZTB6S9UB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Bonfire",
+				);
 				INFOPLIST_FILE = Bonfire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yang.Bonfire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/danielyang/Desktop/Bonfire/Bonfire/Bonfire.h;
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
