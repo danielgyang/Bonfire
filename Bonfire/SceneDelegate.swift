@@ -10,6 +10,7 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate, SPTAppRemoteDelegate, SPTAppRemotePlayerStateDelegate {
     
+    
     var window: UIWindow?
     
     func appRemoteDidEstablishConnection(_ appRemote: SPTAppRemote) {
